@@ -12,9 +12,8 @@
     </head>
 <body>
     <div class="title"><h1>Witamy w aplikcji PIWKO</h1></div>
-    <div class="main_button">SKANUJ</div>
 
-<div class="login_box">
+<div id='login_div' class="login_box">
 
         <input id="email_field" type="email" placeholder="Email">
     
@@ -22,13 +21,15 @@
     
         <button id="btnLogin" onclick="login()" class="btn-action">Log in</button>
         
-        <button id="btnSignUp" class="btn-secoundary">Sign Up</button>
+        <button id="btnSignUp"  onclick="signup()" class="btn-secoundary">Sign Up</button>
     
         <button id="btnLogout" class="btn btn-action hide">Log Out</button>
     
       
     
     </div>
+
+    <div id='loggedin_div' class="loggedin_box">Zostałeś pomyślnie zalogowany!</div>
 
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
     <script>

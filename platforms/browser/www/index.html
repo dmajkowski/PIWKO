@@ -16,37 +16,45 @@
     </head>
 <body>
     
-    <div class="kontener red lighten-2">
+    <div class="kontener grey darken-1">
+
+    <div class="title"><h3>Witamy w aplikacji PIWKO</h3></div>
 
         <div id='login_div' class="login_box">
-            <div class="title"><h1>Witamy w aplikacji PIWKO</h1></div>
 
-                
-                            <div class="input-field">
-                                    <input id="email_field" type="email" placeholder="Email" class="validate">
+                <div class="row">
+                            <div class="input-field col s12">
+                                    <input id="email_field" type="email" placeholder="" class="validate">
                               <label for="email">E-mail</label>
                               <span class="helper-text" data-error="wrong" data-success="right"></span>
                             </div>
 
-                                <div class="input-field">
-                                        <input id="password_field" type="password" placeholder="Password" class="validate">
-                                  <label for="Password">Password</label>
-                                  <span class="helper-text" data-error="wrong" data-success="right"></span>
+                            
+                </div>
 
-                                </div>
-    
-                <button id="btnLogin" onclick="login()" class="btn-action">Log in</button>
+                <div class="row">
+                        <div class="input-field col s12">
+                                <input id="password_field" type="password" placeholder="" class="validate">
+                          <label for="Password">Password</label>
+                          <span class="helper-text" data-error="wrong" data-success="right"></span>
+
+                        </div>
+
+                        
+            </div>
+                                
+                <div class="buttons">
+                <button id="btnLogin" onclick="login()" class="btn">Log in</button>
         
-                <button id="btnSignUp"  onclick="signup()" class="btn-secoundary">Sign Up</button>
-    
-                <button id="btnLogout" onclick="logout()" class="btn btn-action hide">Log Out</button>
+                <button id="btnSignUp"  onclick="signup()" class="btn">Sign Up</button>
+                </div>
     
       
     
     </div>
 
     <div id='loggedin_div' class="loggedin_box">Zostałeś pomyślnie zalogowany!
-            <button id="btnLogout" onclick="logout()" class="btn btn-action hide">Log Out</button>
+            <button id="btnLogout" onclick="logout()" class="btn">Log Out</button>
     </div>
     <div id='loggedout_div' class="loggedout_box">Zostałeś pomyślnie wylogowany!</div>
 </div>

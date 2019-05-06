@@ -49,8 +49,15 @@
                 <button id="btnSignUp"  onclick="signup()" class="btn">Sign Up</button>
                 </div>
     
-      
-    
+                <div class="wrapper">
+                <button onclick="login_fb()" class="loginBtn loginBtn--facebook">
+                        Login with Facebook
+                      </button>
+                      
+                      <button class="loginBtn loginBtn--google">
+                        Login with Google
+                      </button>
+                </div>
     </div>
 
     <div id='loggedin_div' class="loggedin_box">Zostałeś pomyślnie zalogowany!
@@ -58,6 +65,9 @@
     </div>
     <div id='loggedout_div' class="loggedout_box">Zostałeś pomyślnie wylogowany!</div>
 </div>
+
+
+
 
 
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>

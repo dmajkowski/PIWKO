@@ -86,44 +86,16 @@ function login_fb(){
         // ...
       });
     }
-
-    function AcquireImage() { 
-      DWObject.IfDisableSourceAfterAcquire = true; 
-      DWObject.SelectSource(); 
-      DWObject.OpenSource(); 
-      DWObject.AcquireImage(); 
-      } 
-      function ReadBarcode(){
-      if (!dbrObject) return;
-      var barcodeImage = DWObject.GetImageURL(DWObject.CurrentImageIndexInBuffer);
-      
-      dbrObject.decode(barcodeImage).then(OnBarcodeReadSuccess, OnBarcodeReadFailure);
-      }
-      function OnBarcodeReadSuccess(results) {
-      var strMsg = "";
-      if(results.length > 0) {
-      for (var i = 0; i < results.length; i++){
-      var result = results[i];
-      strMsg +="Index: " + i + "\n";
-      strMsg += "Barcode Type: " + result.BarcodeFormatString + "\n";
-      strMsg += "Barcode Value: " + result.BarcodeText + "\n"; 
-      }
-      console.log(strMsg);
-      }
-      else
-      alert("No barcode(s) found.");
-      }
-      function OnBarcodeReadFailure(ex) {
-      alert(ex.message || ex);
-      }
-
+let kod = "";
       function scan(){
      //https://www.dynamsoft.com/CustomerPortal/Portal/TrialLicense.aspx
         BarcodeReader.licenseKey = 't0068MgAAAAxT9peWqAbLNI2gDlg9yk8dqzhp5Me5BNCgFIg2p5X+8TPYghCr9cz6TNFlkmkpzOJelNHJaQMWGe7Bszoxoo4=';
         let scanner = new BarcodeReader.Scanner({
         htmlElement: document.getElementById('div-video-container'),
         onFrameRead: results => {console.log(results);},
-        onNewCodeRead: (txt, result) => {alert(txt);}
+        onNewCodeRead: (txt, result) => {kod = txt;}
+        
      });
      scanner.open();
       }
+

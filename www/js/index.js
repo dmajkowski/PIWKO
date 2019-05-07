@@ -99,3 +99,6 @@ let kod = "";
      scanner.open();
       }
 
+function pokaz(){
+  document.write(kod);
+}

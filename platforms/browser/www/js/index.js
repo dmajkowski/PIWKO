@@ -1,3 +1,13 @@
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyCJUe6lJGDiEOg0ZzkVDOutlUjtTOZk0hA",
+  authDomain: "piwko-4c891.firebaseapp.com",
+  databaseURL: "https://piwko-4c891.firebaseio.com",
+  projectId: "piwko-4c891",
+  storageBucket: "piwko-4c891.appspot.com",
+  messagingSenderId: "1039773129892"
+};
+firebase.initializeApp(config);
 
 //Dodawanie nowego użytkownika
 function signup(){
@@ -37,15 +47,10 @@ function login(){
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-      document.getElementById("login_div").style.display = "none"
-      document.getElementById("loggedin_div").style.display = "flex";
-      document.getElementById("loggedout_div").style.display = "none";
+      window.location.replace('main.html');
       console.log('User: ' + user.email);
     } else {
       // No user is signed in.
-      document.getElementById("login_div").style.display = "flex"
-      document.getElementById("loggedin_div").style.display = "none";
-      document.getElementById("loggedout_div").style.display = "none";
       console.log('Niezalogowany');
     }
   });

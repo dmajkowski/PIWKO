@@ -40,11 +40,13 @@ firebase.auth().onAuthStateChanged(function(user) {
       document.getElementById("login_div").style.display = "none"
       document.getElementById("loggedin_div").style.display = "flex";
       document.getElementById("loggedout_div").style.display = "none";
+      console.log('zalogowany' + user);
     } else {
       // No user is signed in.
       document.getElementById("login_div").style.display = "flex"
       document.getElementById("loggedin_div").style.display = "none";
       document.getElementById("loggedout_div").style.display = "none";
+      console.log('zalogowany ' + user);
     }
   });
 
@@ -57,6 +59,7 @@ firebase.auth().signOut().then(function() {
     document.getElementById("loggedout_div").style.display = "flex";
   }).catch(function(error) {
     // An error happened.
+    console.log('BŁĄD WYLOGOWANIA');
   });
 }
 

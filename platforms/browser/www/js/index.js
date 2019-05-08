@@ -42,13 +42,15 @@ function login(){
 
 }
 
-
+let email_uzytkownika = "";
 //Sprawdzenie Czy uzytkownik zalogowany
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-      window.location.replace('main.html');
+      window.location.assign('main.html')
       console.log('User: ' + user.email);
+      email_uzytkownika = user.email;
+
     } else {
       // No user is signed in.
       console.log('Niezalogowany');

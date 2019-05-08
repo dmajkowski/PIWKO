@@ -19,7 +19,6 @@ function logout(){
       });
     }
 
-   console.log('main.html');
 
        //skanowanie kodu
        let kod = "";
@@ -38,3 +37,9 @@ function logout(){
  function pokaz(){
    document.write(kod);
  }
+
+ var user = firebase.auth().currentUser;
+
+//console loggs
+console.log('main.html');
+console.log('User: ' + user);

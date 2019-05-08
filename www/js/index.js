@@ -32,29 +32,23 @@ function login(){
 
 }
 
-let email_of_user = "";
+
 //Sprawdzenie Czy uzytkownik zalogowany
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-      console.log('Zalogowany user ' + user.email);
-      email_of_user = user.email;
+      document.getElementById("login_div").style.display = "none"
+      document.getElementById("loggedin_div").style.display = "flex";
+      document.getElementById("loggedout_div").style.display = "none";
+      console.log('User: ' + user.email);
     } else {
       // No user is signed in.
-      console.log('Nie ma usera');
+      document.getElementById("login_div").style.display = "flex"
+      document.getElementById("loggedin_div").style.display = "none";
+      document.getElementById("loggedout_div").style.display = "none";
+      console.log('Niezalogowany');
     }
   });
-
-  var user = firebase.auth().currentUser;
-
-  if (email_of_user != null) {
-    // User is signed in.
-    window.location.replace('main.html')
-  } else {
-    // No user is signed in.
-  }
-
-
 
 //Wylogowanie
 function logout(){

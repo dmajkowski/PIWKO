@@ -32,34 +32,37 @@ function login(){
 
 }
 
-
+let email_of_user = "";
 //Sprawdzenie Czy uzytkownik zalogowany
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-      document.getElementById("login_div").style.display = "none"
-      document.getElementById("loggedin_div").style.display = "flex";
-      document.getElementById("loggedout_div").style.display = "none";
-      console.log('zalogowany' + user);
+      console.log('Zalogowany user ' + user.email);
+      email_of_user = user.email;
     } else {
       // No user is signed in.
-      document.getElementById("login_div").style.display = "flex"
-      document.getElementById("loggedin_div").style.display = "none";
-      document.getElementById("loggedout_div").style.display = "none";
-      console.log('zalogowany ' + user);
+      console.log('Nie ma usera');
     }
   });
+
+  var user = firebase.auth().currentUser;
+
+  if (email_of_user != null) {
+    // User is signed in.
+    window.location.replace('main.html')
+  } else {
+    // No user is signed in.
+  }
+
+
 
 //Wylogowanie
 function logout(){
 firebase.auth().signOut().then(function() {
     // Sign-out successful.
-    document.getElementById("login_div").style.display = "none"
-    document.getElementById("loggedin_div").style.display = "none";
-    document.getElementById("loggedout_div").style.display = "flex";
+console.log('wylogowano');
   }).catch(function(error) {
     // An error happened.
-    console.log('BŁĄD WYLOGOWANIA');
   });
 }
 

@@ -47,7 +47,7 @@ let email_uzytkownika = "";
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-      window.location.assign('main.html')
+      window.location.assign('main.html');
       console.log('User: ' + user.email);
       email_uzytkownika = user.email;
 
@@ -116,3 +116,5 @@ function login_fb(){
 function pokaz(){
   document.write(kod);
 }
+
+console.log('KOD: ' + kod);

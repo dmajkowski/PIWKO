@@ -28,7 +28,7 @@ function logout(){
          let scanner = new BarcodeReader.Scanner({
          htmlElement: document.getElementById('div-video-container'),
          onFrameRead: results => {console.log(results);},
-         onNewCodeRead: (txt, result) => {kod = txt;}
+         onNewCodeRead: (txt, result) => {kod = txt && window.location.replace('product_page.html');}
          
       });
       scanner.open();

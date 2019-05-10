@@ -11,8 +11,10 @@ body{
     width: 100%;
 
   }
-
-  .przyciski{
+.top{
+    height: 50%;
+}
+  .bot{
     margin: 0;
     padding: 0;
     height: 100vh;

@@ -7,6 +7,7 @@
     text-align: center;
     color: white;
     margin-bottom:20px;
+    font-family: Verdana;
 }
 .login_box{
     display: flex;
@@ -14,7 +15,7 @@
 }
 
 .loggedin_box{
-    display: none;
+    display: flex;
     flex-direction: column;
 
 }
@@ -24,6 +25,12 @@
 
   /* label color */
   .input-field label {
+    color: white;
+  }
+
+
+  .validate{
+
     color: white;
   }
  
@@ -40,6 +47,8 @@
     width:150px;
 
 }
+
+
 
 .buttons{
     text-align: center;

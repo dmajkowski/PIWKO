@@ -1,12 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.example.hello" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>PIWKO</name>
+<widget id="pl.PIWKO" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>HelloCordova</name>
     <description>
-        PIWKO
+        A sample Apache Cordova application that responds to the deviceready event.
     </description>
-    <author>
-        ....
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
     </author>
+    <universal-links>
+        <host name="192.168.1.15 " scheme="https" />
+        <host name="AUTH_DOMAIN" scheme="https">
+            <path url="/__/auth/callback" />
+        </host>
+    </universal-links>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -15,11 +21,4 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <universal-links>
-        <host name="ct27s.app.goo.gl" scheme="https" />
-        <host name="baiprojekt-54e2b.firebaseapp.com" scheme="https">
-            <path url="/__/auth/callback" />
-        </host>
-    </universal-links>
-    <preference name="AndroidLaunchMode" value="singleTask" />
 </widget>

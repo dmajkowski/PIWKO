@@ -34,8 +34,9 @@ function logout(){
       scanner.open();
 
        }
- function pokaz(){
-   document.write(kod);
+
+ function new_scan(){
+  window.location.replace('main.html');
  }
 
  var user = firebase.auth().currentUser;

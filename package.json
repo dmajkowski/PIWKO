@@ -14,6 +14,7 @@
     "license": "Apache-2.0",
     "dependencies": {
         "cordova-plugin-barcodescanner": "^0.7.4",
+        "cordova-plugin-camera": "^4.0.3",
         "cordova-plugin-compat": "^1.2.0",
         "dynamsoft-javascript-barcode": "^6.5.3"
     }

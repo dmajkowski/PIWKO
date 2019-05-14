@@ -19,33 +19,31 @@ function logout(){
       });
     }
 
-    document.addEventListener("deviceready", onDeviceReady, false);
-    function onDeviceReady() {
-        alert('dziala kamerka');
-    }
-       //skanowanie kodu
-       let kod = "";
-       function scan(){
+//skanowanie kodu
+let kod = "";
+function scan(){
 
-      //https://www.dynamsoft.com/CustomerPortal/Portal/TrialLicense.aspx
-         BarcodeReader.licenseKey = 't0068MgAAAAxT9peWqAbLNI2gDlg9yk8dqzhp5Me5BNCgFIg2p5X+8TPYghCr9cz6TNFlkmkpzOJelNHJaQMWGe7Bszoxoo4=';
-         let scanner = new BarcodeReader.Scanner({
-         htmlElement: document.getElementById('div-video-container'),
-         onFrameRead: results => {console.log(results);},
-         onNewCodeRead: (txt, result) => {kod = txt; let strona = kod + ".html"; window.location.replace(strona);}
+//https://www.dynamsoft.com/CustomerPortal/Portal/TrialLicense.aspx
+BarcodeReader.licenseKey = 't0068MgAAAAxT9peWqAbLNI2gDlg9yk8dqzhp5Me5BNCgFIg2p5X+8TPYghCr9cz6TNFlkmkpzOJelNHJaQMWGe7Bszoxoo4=';
+let scanner = new BarcodeReader.Scanner({
+htmlElement: document.getElementById('div-video-container'),
+onFrameRead: results => {console.log(results);},
+onNewCodeRead: (txt, result) => {kod = txt; let strona = kod + ".html"; window.location.replace(strona);}
 
-      });
-      scanner.open();
+});
+scanner.open();
 
-       }
- function pokaz(){
-   document.write(kod);
- }
+}
+function pokaz(){
+document.write(kod);
+}
 
- var user = firebase.auth().currentUser;
+email_uzytkownika = localStorage.getItem("email_uzytkownika");
+
+
 
 //console loggs
 console.log('main.html');
-console.log('User: ' + user);
+console.log('User: ' + email_uzytkownika);
 console.log('KOD: ' + kod);
 

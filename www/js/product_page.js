@@ -23,30 +23,6 @@ function logout(){
        //skanowanie kodu
        let kod = "";
        function scan(){
-
-        if (navigator.getUserMedia) {
-  // Request the camera.
-  navigator.getUserMedia(
-    // Constraints
-    {
-      video: true
-    },
-
-    // Success Callback
-    function(localMediaStream) {
-
-    },
-
-    // Error Callback
-    function(err) {
-      // Log the error to the console.
-      alert('The following error occurred when trying to use getUserMedia: ' + err);
-    }
-  );
-
-} else {
-  alert('Sorry, your browser does not support getUserMedia');
-}
       //https://www.dynamsoft.com/CustomerPortal/Portal/TrialLicense.aspx
          BarcodeReader.licenseKey = 't0068MgAAAAxT9peWqAbLNI2gDlg9yk8dqzhp5Me5BNCgFIg2p5X+8TPYghCr9cz6TNFlkmkpzOJelNHJaQMWGe7Bszoxoo4=';
          let scanner = new BarcodeReader.Scanner({
@@ -58,8 +34,9 @@ function logout(){
       scanner.open();
 
        }
- function pokaz(){
-   document.write(kod);
+
+ function new_scan(){
+  window.location.replace('main.html');
  }
 
  var user = firebase.auth().currentUser;

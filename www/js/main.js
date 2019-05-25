@@ -34,9 +34,6 @@ onNewCodeRead: (txt, result) => {kod = txt; let strona = kod + ".html"; window.l
 scanner.open();
 
 }
-function pokaz(){
-document.write(kod);
-}
 
 email_uzytkownika = localStorage.getItem("email_uzytkownika");
 

@@ -3,7 +3,7 @@
 <html>
     <head>
         <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
         <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>    
         <meta name="format-detection" content="telephone=no">
@@ -14,7 +14,11 @@
     </head>
     <body>
 
-            <div>Zalogowany:</div>
+            <div class="headline">
+                <p>Zalogowany:</p> 
+                <p id="logged_user">e-mail</p>
+                <button onclick="logout()" class="btn">Wyloguj</button>
+            </div>
 
 
                                                                                 <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
@@ -29,13 +33,14 @@
                 <div class="kontener grey darken-1">
 
                    <div class="top">
-                        <h4 class="app_name">PIWKO </br> Aplikacja do skanowania wyrobów browarniczych</h4>
-
+                        <h2 class="app_name">PIWKO</h2>
+                        <p class="center_text">Witaj w aplikacji w której możesz w łatwy sposób uzyskać informacje o interesującym cię trunku.</p>
+                        
                    </div>
+                   <div class="mid"><img src="./img/scanning_instruction.jpg" alt="INSTRUKCJA SKANOWANIA"></div>
                    <div class="bot">
-                               <div class="button"><button onclick="logout()" class="btn">Log Out</button></div>
-                               <div class="button"><button onclick="scan()" class="btn">Scan</button></div>
-                               <div class="button"><button onclick="pokaz()" class="btn" >KOD</button></div>
+                        <p class="center_text">Naciśnij przycisk skanuj, a następnie nakieruj aparat urządzenia na kod kreskowy butelki.</p>
+                        <button id="scanning-btn" onclick="scan()" class="btn">Skanuj</button>
 
                     </div>
                 </div> 

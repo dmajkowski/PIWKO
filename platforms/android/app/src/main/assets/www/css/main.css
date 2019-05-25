@@ -1,5 +1,6 @@
 body{
     background-color: darkgray;
+    font-family: 'Montserrat', sans-serif;
 }
 .kontener {
     margin: 0;
@@ -7,30 +8,47 @@ body{
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     width: 100%;
 
-  }
-.top{
-    height: 50%;
-}
-  .bot{
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 100%;
-  }
-
-
-  .button{
-    align-self: center;
-    
   }
 
   .app_name{
       color: white;
       text-align: center;
+  }
+
+  .headline{
+    margin: 5px;
+    height: 35px;
+    display: flex;
+  }
+
+  .btn{
+    align-self: center;
+  }
+
+  #logged_user{
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .mid{
+    display: flex;
+    justify-content: center;
+  }
+
+  .bot{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+  }
+
+  #scanning-btn{
+    height: 100px;
+    width: 200px;
+
+  }
+
+  .center_text{
+    text-align: center;
   }

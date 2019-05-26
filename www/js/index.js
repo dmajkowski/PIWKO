@@ -120,3 +120,4 @@ function pokaz(){
 console.log('KOD: ' + kod);
 console.log('User: ' + email_uzytkownika);
 localStorage.setItem("email_uzytkownika", email_uzytkownika);
+

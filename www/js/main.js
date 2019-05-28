@@ -9,6 +9,8 @@ var config = {
 };
 firebase.initializeApp(config);
 
+
+
 //Wylogowanie
 function logout(){
     firebase.auth().signOut().then(function() {
@@ -35,12 +37,14 @@ scanner.open();
 
 }
 
-email_uzytkownika = localStorage.getItem("email_uzytkownika");
+let email_uzytkownika = sessionStorage.getItem('email_uzytkownika');
 
+let logged_user = document.getElementById('logged_user');
+logged_user.innerText = email_uzytkownika;
 
 
 //console loggs
 console.log('main.html');
-console.log('User: ' + email_uzytkownika);
+console.log('User:   ' + email_uzytkownika);
 console.log('KOD: ' + kod);
 

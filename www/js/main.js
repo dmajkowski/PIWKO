@@ -72,7 +72,7 @@ console.log('KOD: ' + kod);
 
 
 // const ul = document.getElementById('authors');
-const url = 'https://world.openfoodfacts.org/product/5901559140009';
+const url = 'https://world.openfoodfacts.org/api/v0/product/737628064502.json';
 // fetch(url)
 //   .then(function(data) {
 //     // Here you get the data to modify as you please

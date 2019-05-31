@@ -39,14 +39,59 @@ scanner.open();
 
 let email_uzytkownika = sessionStorage.getItem('email_uzytkownika');
 
+
 let logged_user = document.getElementById('logged_user');
 logged_user.innerText = email_uzytkownika;
+
+       //skanowanie kodu
+       let kod = "";
+       function scan(){
+
+        if (navigator.getUserMedia) {
+  // Request the camera.
+  navigator.getUserMedia(
+    // Constraints
+    {
+      video: true
+    },
+
+    // Success Callback
+    function(localMediaStream) {
+
+    },
+
+    // Error Callback
+    function(err) {
+      // Log the error to the console.
+      alert('The following error occurred when trying to use getUserMedia: ' + err);
+    }
+  );
+
+} else {
+  alert('Sorry, your browser does not support getUserMedia');
+}
+      //https://www.dynamsoft.com/CustomerPortal/Portal/TrialLicense.aspx
+         BarcodeReader.licenseKey = 't0068MgAAAAxT9peWqAbLNI2gDlg9yk8dqzhp5Me5BNCgFIg2p5X+8TPYghCr9cz6TNFlkmkpzOJelNHJaQMWGe7Bszoxoo4=';
+         let scanner = new BarcodeReader.Scanner({
+         htmlElement: document.getElementById('div-video-container'),
+         onFrameRead: results => {console.log(results);},
+         onNewCodeRead: (txt, result) => {kod = txt; let strona = kod + ".html"; window.location.replace(strona);}
+
+      });
+      scanner.open();
+
+       }
+
 
 
 //console loggs
 console.log('main.html');
+
 console.log('User:   ' + email_uzytkownika);
 console.log('KOD: ' + kod);
+console.log('User: ' + email_uzytkownika);
+
+
 
 
 ////API///

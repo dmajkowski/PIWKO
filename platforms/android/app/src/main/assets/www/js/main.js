@@ -39,98 +39,12 @@ scanner.open();
 
 let email_uzytkownika = sessionStorage.getItem('email_uzytkownika');
 
-
 let logged_user = document.getElementById('logged_user');
 logged_user.innerText = email_uzytkownika;
-
-       //skanowanie kodu
-       let kod = "";
-       function scan(){
-
-        if (navigator.getUserMedia) {
-  // Request the camera.
-  navigator.getUserMedia(
-    // Constraints
-    {
-      video: true
-    },
-
-    // Success Callback
-    function(localMediaStream) {
-
-    },
-
-    // Error Callback
-    function(err) {
-      // Log the error to the console.
-      alert('The following error occurred when trying to use getUserMedia: ' + err);
-    }
-  );
-
-} else {
-  alert('Sorry, your browser does not support getUserMedia');
-}
-      //https://www.dynamsoft.com/CustomerPortal/Portal/TrialLicense.aspx
-         BarcodeReader.licenseKey = 't0068MgAAAAxT9peWqAbLNI2gDlg9yk8dqzhp5Me5BNCgFIg2p5X+8TPYghCr9cz6TNFlkmkpzOJelNHJaQMWGe7Bszoxoo4=';
-         let scanner = new BarcodeReader.Scanner({
-         htmlElement: document.getElementById('div-video-container'),
-         onFrameRead: results => {console.log(results);},
-         onNewCodeRead: (txt, result) => {kod = txt; let strona = kod + ".html"; window.location.replace(strona);}
-
-      });
-      scanner.open();
-
-       }
-
 
 
 //console loggs
 console.log('main.html');
-
 console.log('User:   ' + email_uzytkownika);
 console.log('KOD: ' + kod);
-console.log('User: ' + email_uzytkownika);
-
-
-
-
-////API///
-
-// var request = new XMLHttpRequest()
-
-// request.open('GET', 'https://world.openfoodfacts.org/api/v0/product/737628064502.json', true)
-// request.onload = function() {
-//   // Begin accessing JSON data here
-//   var data = JSON.parse(this.response)
-
-//   if (request.status >= 200 && request.status < 400) {
-//     data.forEach(product => {
-//       console.log(product.code)
-//     })
-//   } else {
-//     console.log('error')
-//   }
-// }
-
-// request.send()
-
-
-
-// const ul = document.getElementById('authors');
-const url = 'https://world.openfoodfacts.org/api/v0/product/737628064502.json';
-// fetch(url)
-//   .then(function(data) {
-//     // Here you get the data to modify as you please
-//     let kodzik = data.json();
-//     console.log(kodzik);
-//     })
-//   .catch(function(error) {
-//     // If there is any error you will catch them here
-//   });   
-let skrap = '';
-fetch(url)
-    .then(response => response.json())
-    .then(json => {console.log('wczesniej: ' + json.code), skrap = json.code})
-    .then(json => console.log("to" + skrap));
-
 

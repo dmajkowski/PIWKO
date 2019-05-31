@@ -5,7 +5,9 @@
         <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
         <!--Import materialize.css-->
-        <link type="text/css" rel="stylesheet" href="materialize.min.css"  media="screen,projection"/>    
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <link type="text/css" rel="stylesheet" href="../www/css/materialize.min.css"  media="screen,projection"/>    
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
@@ -16,28 +18,81 @@
         <div class="kontener">
             <h1 class="tekst-wysrodkowany">Strona aplikacji PiwSkan</h1>
             <hr />
-            <p class="tekst-wyjustowany">Witamy na stronie poświęconej aplikacji PiwSkan. Aplikacja ma pomagać w wyborze interesujących nas trunków.
-            Dzięki niej, możemy zeskanować etkietę z kodem kreskowym butelki co pozwoli na wyświetlenie informacji o konkretnym produkcie.
-            Aplikacja wyświetli zdjęcie produktu, wraz z krótkim opisem, oraz podstawowymi informacjami na temat badanego piwa.
+            <p class="tekst-wyjustowany">Witamy na stronie poświęconej aplikacji PiwSkan.
             </p>
             <hr />
-            <h3>Spis Treści</h3>
-            <div><ol>
-                    <li>Opis aplikacji</li>
-                    <li>Funkcjonalności aplikacji</li>
-                    <li>Prototyp aplikacji</li>
-                    <li>Uczestnicy projektu</li>
-                    <li>Linki zewnętrzne</li>
-                </ol></div>
+            <h3 class="tekst-wyjustowany">Spis Treści</h3>
+            <div class="spis_tresci tekst-wyjustowany">
+                    <div class="collection">
+                            <a href="#opis" class="collection-item">Opis aplikacji</a>
+                            <a href="#funkcjonalnosc" class="collection-item">Funkcjonalności aplikacji</a>
+                            <a href="#prototyp" class="collection-item">Prototyp aplikacji</a>
+                            <a href="#uczestnicy" class="collection-item">Uczestnicy projektu</a>
+                            <a href="#linki" class="collection-item">Linki zewnętrzne</a>
+
+                          </div>
+                </div>
                 <hr />
-            <div>
-                
-                
-
-
-
-
+            <div class="tekst-wyjustowany">
+                <h3 id="opis">Piwskan</h3>
+                <p>Aplikacja ma pomagać w wyborze interesujących nas trunków.
+                        Dzięki niej, możemy zeskanować etkietę z kodem kreskowym butelki co pozwoli na wyświetlenie informacji o konkretnym produkcie.
+                        Aplikacja wyświetli zdjęcie produktu, wraz z krótkim opisem, oraz podstawowymi informacjami na temat badanego piwa.</p>
             </div>
+            <hr />
+            <div class="tekst-wyjustowany">
+                    <h3 id="funkcjonalnosc">Funkcjonalność aplikacji</h3>
+                    <div class="collection">
+                <ul class="collection with-header">
+                        <li class="collection-item">Logowanie za pomocą email</li>
+                        <li class="collection-item">Logowanie kontem Facebook</li>
+                        <li class="collection-item">Logowanie kontem Google</li>
+                        <li class="collection-item">Skanowanie etykiet produktów</li>
+                        <li class="collection-item">Wyświetlanie informacji na temat zeskanowanego produktu</li>
+                        <li class="collection-item">Informacja o aktualnie zalogowanym użytkowniku</li>
+                      </ul>
+                    </div>
+                    
+                </div>
+                <hr />
+                    <div class="tekst-wyjustowany">
+            <h3 id="prototyp">Prototyp aplikacji</h3>
+            Prototyp aplikacji został stworzony w <a href="https://www.irise.com/" class="wave-effect">iRise</a>
+            </div>
+                <div class="ekrany ">
+                    <img class="obrazek" src="screen1.PNG" alt="">
+                    <img class="obrazek" src="Screen2.PNG" alt="">
+                    <img class="obrazek" src="screen3.PNG" alt="">
+                    <img class="obrazek" src="screen4.PNG" alt="">
+                </div>
+                <hr />
+                <div class="tekst-wyjustowany">
+                <h3 id="uczestnicy">Uczestnicy projektu</h3>
+                <ul>
+                    <li>Dariusz Majkowski</li>
+                    <li>Jarosław Mirek</li>
+                    <li>Marcin leganowski</li>
+                </ul>
+                </div>
+                <hr />
+                <div class="tekst-wyjustowany">
+                    <h3 id="linki">Linki</h3>
+                    <div class="collection">
+                            <a href="https://github.com/dmajkowski/PIWKO" class="collection-item">Github</a>
+                            <a href="https://trello.com/b/ehmNQ7jY/aplikacja-piwko" class="collection-item">Trello</a>
+                            <a href="https://trial.dc.irise.com:443/iRise/ds/play/0804d925c1304fc3baaf9842ff074609" class="collection-item">Prototyp</a>
+                          </div>
+                </div>
+
         </div>
+        <div class="fixed-action-btn">
+                <a id="back-to-top" class="btn-floating btn-large scale-transition">
+                  <i class="large material-icons">arrow_upward</i>
+                </a>
+              </div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script src="scripts.js"></script>
     </body>
 </html>

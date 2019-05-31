@@ -50,6 +50,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       window.location.assign('main.html');
       console.log('User: ' + user.email);
       email_uzytkownika = user.email;
+      sessionStorage.setItem('email_uzytkownika', email_uzytkownika);
 
     } else {
       // No user is signed in.
@@ -118,6 +119,7 @@ function pokaz(){
 }
 
 console.log('KOD: ' + kod);
+
 console.log('User: ' + email_uzytkownika);
 localStorage.setItem("email_uzytkownika", email_uzytkownika);
 

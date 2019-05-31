@@ -9,6 +9,8 @@ var config = {
 };
 firebase.initializeApp(config);
 
+
+
 //Wylogowanie
 function logout(){
     firebase.auth().signOut().then(function() {
@@ -35,12 +37,55 @@ scanner.open();
 
 }
 
-email_uzytkownika = localStorage.getItem("email_uzytkownika");
+let email_uzytkownika = sessionStorage.getItem('email_uzytkownika');
 
+let logged_user = document.getElementById('logged_user');
+logged_user.innerText = email_uzytkownika;
 
 
 //console loggs
 console.log('main.html');
-console.log('User: ' + email_uzytkownika);
+console.log('User:   ' + email_uzytkownika);
 console.log('KOD: ' + kod);
+
+
+////API///
+
+// var request = new XMLHttpRequest()
+
+// request.open('GET', 'https://world.openfoodfacts.org/api/v0/product/737628064502.json', true)
+// request.onload = function() {
+//   // Begin accessing JSON data here
+//   var data = JSON.parse(this.response)
+
+//   if (request.status >= 200 && request.status < 400) {
+//     data.forEach(product => {
+//       console.log(product.code)
+//     })
+//   } else {
+//     console.log('error')
+//   }
+// }
+
+// request.send()
+
+
+
+// const ul = document.getElementById('authors');
+const url = 'https://world.openfoodfacts.org/api/v0/product/737628064502.json';
+// fetch(url)
+//   .then(function(data) {
+//     // Here you get the data to modify as you please
+//     let kodzik = data.json();
+//     console.log(kodzik);
+//     })
+//   .catch(function(error) {
+//     // If there is any error you will catch them here
+//   });   
+let skrap = '';
+fetch(url)
+    .then(response => response.json())
+    .then(json => {console.log('wczesniej: ' + json.code), skrap = json.code})
+    .then(json => console.log("to" + skrap));
+
 

@@ -1,7 +1,28 @@
 .body{
     margin: 0 auto;
     padding: 0 auto;
+
 }
+
+.kontener{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .tekst-wysrodkowany{
     text-align: center;
 }
+
+.tekst-wyjustowany{
+    text-align: justify;
+    width: 90%;
+}
+
+hr {
+    color: white;
+    background: grey;
+    width: 90%;
+    height: 1px;
+    }

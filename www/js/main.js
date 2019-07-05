@@ -26,11 +26,11 @@ let kod = "";
 function scan(){
 
 //https://www.dynamsoft.com/CustomerPortal/Portal/TrialLicense.aspx
-BarcodeReader.licenseKey = 't0068MgAAAAxT9peWqAbLNI2gDlg9yk8dqzhp5Me5BNCgFIg2p5X+8TPYghCr9cz6TNFlkmkpzOJelNHJaQMWGe7Bszoxoo4=';
+BarcodeReader.licenseKey = 't0127lQMAAA+QXkpMt0TbBEhI/JoOV3bv8eREci5ir/e6kklrmqOU8vpqZ2czB2I7ZjV+OJMk3lhker8n1DsDT7ksU13yU5WdlbcUSpiVMCthVsKshNkJsxNmJ8xOmJ0wJ2FOwpyEOQlzfWv9RG0mmqwbQdX4W/2bITK72bgBKuCxeQ==';
 let scanner = new BarcodeReader.Scanner({
 htmlElement: document.getElementById('div-video-container'),
 onFrameRead: results => {console.log(results);},
-onNewCodeRead: (txt, result) => {kod = txt; let strona = kod + ".html"; window.location.replace(strona);}
+onNewCodeRead: (txt, result) => {kod = txt; sessionStorage.setItem("EAN", kod); window.location.replace('product_page.html');}
 
 });
 scanner.open();
@@ -43,8 +43,10 @@ let logged_user = document.getElementById('logged_user');
 logged_user.innerText = email_uzytkownika;
 
 
+// //przekazuje zeskanowany kod do pamieci
+// localStorage.setItem("EAN_code", kod);
+
 //console loggs
 console.log('main.html');
 console.log('User:   ' + email_uzytkownika);
 console.log('KOD: ' + kod);
-
